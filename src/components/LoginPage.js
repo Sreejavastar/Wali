@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css'
+
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -49,7 +50,7 @@ const LoginPage = () => {
       <button onClick={handleLogin}>Login</button>
     </div>
     <p>
-    {/* Don't have an account? <Link to="/newpage">Click here</Link> to go to the new page. */}
+    Don't have an account? <Link to="/newpage">Click here</Link> to go to the new page.
     </p>
     </div>
   );
