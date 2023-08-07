@@ -36,6 +36,24 @@ class QrContainer extends Component {
             {/* heading */}
             <h4>Walmart</h4>
           </div>
+          <div className="Hamburger" style={{ display: 'none' }}>
+          <div className="options1" style={{ display: 'none' }}>
+            <ul>
+              <li>
+                <Link to="#">Change your location</Link>
+              </li>
+              <li>
+                <Link to="#">Our Policy</Link>
+              </li>
+              <li>
+                <Link to="#">News Updates</Link>
+              </li>
+              <li>
+                <Link to="#">Profile</Link>
+              </li>
+            </ul>
+          </div>
+          </div>
           <div className="options">
             <ul>
               <li>
@@ -60,7 +78,7 @@ class QrContainer extends Component {
           </div>
           <div className="camera-scan">
             <QrReader
-              // delay={1000}
+              delay={1000}
               className="scanner"
               onError={this.handleError}
               onScan={this.handleScan}
