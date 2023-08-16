@@ -27,7 +27,13 @@
 
 .logo-head {
   display: flex;
-  gap: 29px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-head img {
+  height: 105px;
 }
 
 .options {
@@ -50,6 +56,27 @@
 .options ul li a {
   text-decoration: none;
   color: black;
+  transition: 0.3s ease-in-out;
+  border-bottom: 5px solid transparent;
+  display: inline-block;
+  /* Ensure the underline only spans the text width */
+  position: relative;
+}
+
+.options ul li a:hover {
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid #000;
+}
+
+.chatter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.chatter img {
+  height: 20px;
 }
 
 .content {
@@ -67,6 +94,7 @@
   gap: 3rem;
   /* height: 70vh; */
 }
+
 .first-row {
   display: flex;
   justify-content: space-between;
@@ -87,6 +115,7 @@
   align-items: center;
   text-align: center;
 }
+
 .selection {
   padding: 12px 38px;
   background-color: black;
@@ -103,7 +132,7 @@
 
 .camera-scan {
   width: 40%;
-  background-color: gray;
+  background:  linear-gradient(to right, gold, #1194de);
   height: 353px;
   display: flex;
   flex-direction: column;
@@ -130,6 +159,7 @@
   width: 100%;
   list-style-type: none;
 }
+
 .list ul li {
   text-align: center;
   display: flex;
@@ -137,9 +167,11 @@
   align-items: center;
   padding: 2px 16px;
 }
+
 .list ul li a {
   text-decoration: none;
 }
+
 /* .list ul  */
 .btn-2 {
   padding: 12px 26px;
@@ -154,6 +186,7 @@
   box-shadow: 0px 0px 12px 3px gray;
   letter-spacing: 3px;
 }
+
 .del {
   display: flex;
   justify-content: center;
@@ -279,15 +312,21 @@
   width: 20rem;
 }
 
-.scanned-result{
+.scanned-result {
   width: 49%;
-    border: none;
-    border-radius: 13px;
-    box-shadow: 0px 0px 34px -10px green;
-    font-size: 14px;
-    color: black;
-    font-weight: 700;
-    text-align: center;
+  border: none;
+  border-radius: 13px;
+  box-shadow: 0px 0px 34px -10px rgb(79, 79, 73);
+  font-size: 14px;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  height: 274px;
+  padding: 23px 12px;
+  display: block;
+  height: 302px;
+  padding: 23px 12px;
 }
 
 /* styles.css */
@@ -296,10 +335,11 @@
   display: inline-block;
 }
 
-.hamburger-icon img{
+.hamburger-icon img {
   height: 20px;
   width: auto;
 }
+
 .hamburger-icon {
   cursor: pointer;
   font-size: 24px;
@@ -307,7 +347,8 @@
 
 .options-list {
   position: absolute;
-  top: 30px; /* Adjust as needed */
+  top: 30px;
+  /* Adjust as needed */
   right: 0;
   /* background-color: white; */
   border: 1px solid #ccc;
@@ -327,63 +368,170 @@
   border-radius: 12px;
   font-size: 14px;
 }
-.options-list li a{
+
+.options-list li a {
   text-decoration: none;
-  text-decoration-style: none ;
+  text-decoration-style: none;
   color: black;
   font-size: 16px;
 }
+
 .options-list li {
   margin: 5px 0;
   cursor: pointer;
   text-decoration: none;
-  text-decoration-style: none ;
+  text-decoration-style: none;
 }
 
-@media (min-width: 350px) and  (max-width: 600px){
+
+.quantity {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.quantity-field {
+  text-align: center;
+  font-weight: 600;
+  padding: 7px;
+  border-radius: 22px;
+  width: 41px;
+}
+
+.scanned-result-heading {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.scanned-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.final-results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.action-scanned {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+}
+
+.add-to-cart {
+  padding: 11px 22px;
+    background-color: gold;
+    border-radius: 22px;
+    border: none;
+    color: rgb(7, 7, 7);
+    font-weight: 600;
+    box-shadow: 0px 0px 9px 2px lightgray;
+}
+.cancel-item {
+  padding: 11px 19px;
+    background-color: #1194de;
+    border-radius: 22px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0px 0px 9px 2px lightgray;
+} 
+
+
+@media (min-width: 350px) and (max-width: 600px) {
   .parent1 {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  .options{
+
+  .options {
     display: none;
   }
-  .Navbar{
+
+  .Navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .logo-head{
+
+  .logo-head {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     font-size: 12px;
   }
-  .content{
+
+  .content {
     width: 305px;
     margin-left: 0.15rem;
   }
-  .first-row{
+
+  .first-row {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .btn-1{
+
+  .btn-1 {
     padding: 6px 8px;
     border-radius: 7px;
     font-size: 8px;
   }
-  .selection{
+
+  .selection {
     padding: 6px 8px;
     border-radius: 7px;
     font-size: 8px;
     width: 37%;
     letter-spacing: 1px;
   }
+
   .scanner {
     height: 10rem;
     width: 10rem;
   }
 }
 
+.final{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+    box-shadow: 0px 0px 23px 3px lightgray;
+    padding: 12px 23px;
+    border: none;
+    border-radius: 18px;
+}
+
+.amounting{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 4px;
+}
+
+.text-amt{
+  background-color: black;
+    padding: 6px 13px;
+    color: white;
+    border-radius: 22px;
+}
+
+.amount{
+  background-color: white;
+    padding: 6px 13px;
+    color: black;
+    border-radius: 12px;
+    border: 0.5px solid black;
+    font-weight: 700;
+}

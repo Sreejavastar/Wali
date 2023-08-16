@@ -6,7 +6,7 @@ import "./service.css";
 const OptionsList = () => {
   return (
     <ul className="options-list">
-      <li><Link to="#">Change your location</Link></li>
+      <li><Link to="/newpage">Change your location</Link></li>
       <li> <Link to="#">Our Policy</Link></li>
       <li> <Link to="#">News Updates</Link></li>
       <li><Link to="#">Profile</Link></li>

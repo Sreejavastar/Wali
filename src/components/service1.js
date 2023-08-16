@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import QrReader from "react-qr-scanner";
+import walmart1 from "../images/walmart.png";
+import robo from "../images/chatbot-logo.png";
 import HamburgerMenu from "./Hamburger"
 // import menu from "../../public/";
 import "./service.css";
@@ -35,21 +37,21 @@ class QrContainer extends Component {
         <div className="Navbar">
           <div className="logo-head">
             {/* image */}
-            image
+            <img src={walmart1} alt="walmart-logo" />
             {/* heading */}
-            <h4>Walmart</h4>
+            {/* <h4>Walmart</h4> */}
           </div>
           <HamburgerMenu />
           <div className="options">
             <ul>
               <li>
-                <Link to="#">Change your location</Link>
+                <Link to="/newpage">Change your location</Link>
               </li>
               <li>
                 <Link to="#">Our Policy</Link>
               </li>
-              <li>
-                <Link to="#">News Updates</Link>
+              <li className="chatter">
+                <Link to="/chatbot">Chat with <img src={robo} alt="chatbot" /> </Link>
               </li>
               <li>
                 <Link to="#">Profile</Link>
@@ -70,8 +72,34 @@ class QrContainer extends Component {
               onScan={this.handleScan}
             />
           </div>
-          <div className="scanned-result">
-            Scanned Result: {this.state.data && <p>{this.state.data.text}</p>}
+          <div
+            className="scanned-result"
+            style={{
+              display:
+                this.state.data && this.state.data.text ? "block" : "none",
+            }}
+          >
+            <div className="scanned-box">
+              <p className="scanned-result-heading">Scanned Result:</p>
+              <p className="final-results">
+                {this.state.data &&
+                  this.state.data.text.split("\n").map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </p>
+              
+              <div className="action-scanned">
+              <div className="quantity">
+                Qty: <input className="quantity-field" type="number" />
+              </div>
+              <button className="add-to-cart">Add to Cart</button>
+              <button className="cancel-item">Cancel item</button>
+              </div>
+
+            </div>
           </div>
 
           <div className="list">
@@ -93,7 +121,13 @@ class QrContainer extends Component {
               </li>
             </ul>
           </div>
+           <div className="final">
+            <div className="amounting">
+              <span className="text-amt">Net $</span> 
+              <span className="amount">100.00</span>
+            </div>
           <button className="btn-2">CHECKOUT 🛒</button>
+          </div>
         </div>
       </div>
     );
