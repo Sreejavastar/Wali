@@ -17,7 +17,6 @@
   }
 } */
 
-
 .Navbar {
   display: flex;
   justify-content: space-between;
@@ -275,52 +274,53 @@
   width: 20rem;
 }
 
-.scanned-result{
+.scanned-result {
   width: 49%;
-    border: none;
-    border-radius: 13px;
-    box-shadow: 0px 0px 34px -10px green;
-    font-size: 14px;
-    color: black;
-    font-weight: 700;
-    text-align: center;
+  border: none;
+  border-radius: 13px;
+  box-shadow: 0px 0px 34px -10px green;
+  font-size: 14px;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+  /* display: none; */
 }
 
-@media (min-width: 350px) and  (max-width: 600px){
+@media (min-width: 350px) and (max-width: 600px) {
   .parent1 {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  .options{
+  .options {
     display: none;
   }
-  .Navbar{
+  .Navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .logo-head{
+  .logo-head {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     font-size: 12px;
   }
-  .content{
+  .content {
     width: 305px;
     margin-left: 0.15rem;
   }
-  .first-row{
+  .first-row {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .btn-1{
+  .btn-1 {
     padding: 6px 8px;
     border-radius: 7px;
     font-size: 8px;
   }
-  .selection{
+  .selection {
     padding: 6px 8px;
     border-radius: 7px;
     font-size: 8px;
@@ -333,3 +333,41 @@
   }
 }
 
+.scanned-box {
+  border-style: solid;
+  height: 15rem;
+}
+
+.quantity {
+  margin-top: -2rem;
+  margin-left: 18rem;
+  position: absolute;
+}
+.quantity-field {
+  margin-top: 2rem;
+  width: 3rem;
+}
+.scanned-result-heading {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+.final-results {
+  font-size: 0.9rem;
+}
+.add-to-cart {
+  position: absolute;
+  margin-left: -6rem;
+  margin-top: -0.5rem;
+  height: 2rem;
+  width: 5rem;
+}
+.cancel-item {
+  position: absolute;
+  margin-right: 1rem;
+  margin-top: -0.5rem;
+  height: 2rem;
+  width: 5rem;
+  background-color: red;
+  color: white;
+  border: none;
+}

@@ -1,8 +1,7 @@
-import React, {Component} from "react";
+import React, {Component, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import QrReader from "react-qr-scanner";
 import "./service.css";
-
 class QrContainer extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +26,7 @@ class QrContainer extends Component {
   }
 
   render() {
+    // const scanned_result_display = useState(false);
     return (
       <div className="parent1">
         <div className="Navbar">
@@ -36,23 +36,23 @@ class QrContainer extends Component {
             {/* heading */}
             <h4>Walmart</h4>
           </div>
-          <div className="Hamburger" style={{ display: 'none' }}>
-          <div className="options1" style={{ display: 'none' }}>
-            <ul>
-              <li>
-                <Link to="#">Change your location</Link>
-              </li>
-              <li>
-                <Link to="#">Our Policy</Link>
-              </li>
-              <li>
-                <Link to="#">News Updates</Link>
-              </li>
-              <li>
-                <Link to="#">Profile</Link>
-              </li>
-            </ul>
-          </div>
+          <div className="Hamburger" style={{display: "none"}}>
+            <div className="options1" style={{display: "none"}}>
+              <ul>
+                <li>
+                  <Link to="#">Change your location</Link>
+                </li>
+                <li>
+                  <Link to="#">Our Policy</Link>
+                </li>
+                <li>
+                  <Link to="#">News Updates</Link>
+                </li>
+                <li>
+                  <Link to="#">Profile</Link>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="options">
             <ul>
@@ -78,14 +78,35 @@ class QrContainer extends Component {
           </div>
           <div className="camera-scan">
             <QrReader
-              delay={1000}
               className="scanner"
               onError={this.handleError}
               onScan={this.handleScan}
             />
           </div>
-          <div className="scanned-result">
-            Scanned Result: {this.state.data && <p>{this.state.data.text}</p>}
+          <div
+            className="scanned-result"
+            // style={{
+            //   display:
+            //     this.state.data && this.state.data.text ? "block" : "none",
+            // }}
+          >
+            <div className="scanned-box">
+              <p className="scanned-result-heading">Scanned Result:</p>
+              <p className="final-results">
+                {this.state.data &&
+                  this.state.data.text.split("\n").map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
+              </p>
+              <div className="quantity">
+                Qty: <input className="quantity-field" type="number" />
+              </div>
+              <button className="add-to-cart">Add to Cart</button>
+              <button className="cancel-item">Cancel item</button>
+            </div>
           </div>
 
           <div className="list">
