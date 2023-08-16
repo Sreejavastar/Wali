@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import QrReader from "react-qr-scanner";
+import HamburgerMenu from "./Hamburger"
+// import menu from "../../public/";
 import "./service.css";
 
 class QrContainer extends Component {
@@ -25,6 +27,7 @@ class QrContainer extends Component {
   handleError(err) {
     console.error(err);
   }
+  
 
   render() {
     return (
@@ -36,24 +39,7 @@ class QrContainer extends Component {
             {/* heading */}
             <h4>Walmart</h4>
           </div>
-          <div className="Hamburger" style={{ display: 'none' }}>
-          <div className="options1" style={{ display: 'none' }}>
-            <ul>
-              <li>
-                <Link to="#">Change your location</Link>
-              </li>
-              <li>
-                <Link to="#">Our Policy</Link>
-              </li>
-              <li>
-                <Link to="#">News Updates</Link>
-              </li>
-              <li>
-                <Link to="#">Profile</Link>
-              </li>
-            </ul>
-          </div>
-          </div>
+          <HamburgerMenu />
           <div className="options">
             <ul>
               <li>
