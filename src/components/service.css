@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 .parent1 {
   max-width: 1024px;
   margin-left: 19rem;
+  font-family: 'Didact Gothic', sans-serif;
   margin-top: 2rem;
 }
 
@@ -57,6 +60,8 @@
   text-decoration: none;
   color: black;
   transition: 0.3s ease-in-out;
+  font-size: 18px;
+  font-weight: 700;
   border-bottom: 5px solid transparent;
   display: inline-block;
   /* Ensure the underline only spans the text width */
@@ -185,7 +190,19 @@
   border-radius: 27px;
   box-shadow: 0px 0px 12px 3px gray;
   letter-spacing: 3px;
+  cursor: pointer;
 }
+.btn-2 a{
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.btn-2 a:hover{
+  color: gold;
+  letter-spacing: 1.5px;
+}
+
 
 .del {
   display: flex;
@@ -310,6 +327,7 @@
 .scanner {
   height: 20rem;
   width: 20rem;
+  background-color: black;
 }
 
 .scanned-result {
@@ -322,11 +340,9 @@
   font-weight: 700;
   text-align: center;
   display: block;
-  height: 274px;
+  height: 404px;
   padding: 23px 12px;
   display: block;
-  height: 302px;
-  padding: 23px 12px;
 }
 
 /* styles.css */

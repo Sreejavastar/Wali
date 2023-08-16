@@ -15,6 +15,7 @@ const Chatbot = () => {
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     }, 1000);
   };
+  
 
   return (
     <div className="parent-chat">
