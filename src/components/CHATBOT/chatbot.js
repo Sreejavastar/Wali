@@ -6,14 +6,16 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([]);
 
   const handleSendMessage = (text) => {
-    setMessages([...messages, { text, sender: 'user' }]);
-    // Implement bot response logic here
-    
+    const userMessage = {text, sender: "user"};
+    setMessages([...messages, userMessage]);
+
     // Simulate bot response after a delay
     setTimeout(() => {
-      setMessages([...messages, { text: 'This is a bot response.', sender: 'bot' }]);
+      const botMessage = {text: "This is a bot response.", sender: "bot"};
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
     }, 1000);
   };
+  
 
 
   return (

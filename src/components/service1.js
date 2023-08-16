@@ -126,7 +126,7 @@ class QrContainer extends Component {
               <span className="text-amt">Net $</span> 
               <span className="amount">100.00</span>
             </div>
-          <button className="btn-2">CHECKOUT 🛒</button>
+          <button className="btn-2"><Link to="/transaction">CHECKOUT 🛒</Link></button>
           </div>
         </div>
       </div>
