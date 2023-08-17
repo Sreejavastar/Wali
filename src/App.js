@@ -6,6 +6,7 @@ import Service1 from "./components/service1"; // Import NewPage component
 import Chatbot from "./components/CHATBOT/chatbot"; // Import NewPage component
 import CreateAccount from "./components/CreateAccount";
 import Transaction from "./components/transaction"; // Import NewPage component
+import Productdetector from "./components/product-detector";
 
 function App() {
   return (
@@ -18,10 +19,11 @@ function App() {
         {/* Define the route for NewPage */}
         <Route path="/createaccount" element={<CreateAccount />}></Route>
         {/* Define the route for Create Account */}
-        <Route path="/chatbot" element={<Chatbot/>} />{" "}
+        <Route path="/chatbot" element={<Chatbot />} />{" "}
         {/* Define the route for NewPage */}
-        <Route path="/chatbot" element={<Transaction/>} />{" "}
+        <Route path="/chatbot" element={<Transaction />} />{" "}
         {/* Define the route for NewPage */}
+        <Route path="/productdetector" element={<Productdetector />} />{" "}
       </Routes>
     </Router>
   );

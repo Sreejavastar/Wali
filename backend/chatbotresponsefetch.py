@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 
 CORS(app)
-os.environ["OPENAI_API_KEY"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+os.environ["OPENAI_API_KEY"] = "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"
 
 
 @app.route('/ask', methods=['POST'])

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import QrReader from "react-qr-scanner";
 import walmart1 from "../images/walmart.png";
 import robo from "../images/chatbot-logo.png";
@@ -40,7 +40,7 @@ class QrContainer extends Component {
   }
 
   addToCart() {
-    const { data, cartItems } = this.state;
+    const {data, cartItems} = this.state;
     if (data && data.text) {
       const newItem = data.text;
       this.setState({
@@ -53,7 +53,7 @@ class QrContainer extends Component {
   removeFromCart(index) {
     const cartItems = [...this.state.cartItems];
     cartItems.splice(index, 1);
-    this.setState({ cartItems });
+    this.setState({cartItems});
   }
 
   render() {
@@ -73,7 +73,12 @@ class QrContainer extends Component {
                 <Link to="#">Our Policy</Link>
               </li>
               <li className="chatter">
-                <Link to="/chatbot">Chat with <img src={robo} alt="chatbot" /> </Link>
+                <Link to="/chatbot">
+                  Chat with <img src={robo} alt="chatbot" />{" "}
+                </Link>
+              </li>
+              <li>
+                <Link to="/productdetector">Product-Detector</Link>
               </li>
               <li>
                 <Link to="#">Profile</Link>
@@ -87,7 +92,9 @@ class QrContainer extends Component {
             <button className="selection">Select ✅</button>
           </div>
           <div className="camera-scan">
-            <span style={{marginBottom : "9px", fontWeight:"700"}}>Hold QR Code Steady and Clear to Scan</span>
+            <span style={{marginBottom: "9px", fontWeight: "700"}}>
+              Hold QR Code Steady and Clear to Scan
+            </span>
             <QrReader
               delay={1000}
               className="scanner"
@@ -95,7 +102,12 @@ class QrContainer extends Component {
               onScan={this.handleScan}
             />
           </div>
-          <div className="scanned-result" style={{ display: this.state.data && this.state.data.text ? "block" : "none" }}>
+          <div
+            className="scanned-result"
+            style={{
+              display:
+                this.state.data && this.state.data.text ? "block" : "none",
+            }}>
             <div className="scanned-box">
               <p className="scanned-result-heading">Scanned Result:</p>
               <p className="final-results">
@@ -107,32 +119,51 @@ class QrContainer extends Component {
                     </span>
                   ))}
               </p>
-              
+
               <div className="action-scanned">
                 <div className="quantity">
                   Qty: <input className="quantity-field" type="number" />
                 </div>
-                <button className="add-to-cart" onClick={this.addToCart}>Add to Cart</button>
-                <button className="cancel-item" onClick={this.handleCancel}>Cancel item</button>
+                <button className="add-to-cart" onClick={this.addToCart}>
+                  Add to Cart
+                </button>
+                <button className="cancel-item" onClick={this.handleCancel}>
+                  Cancel item
+                </button>
               </div>
             </div>
           </div>
           <div className="list">
-          <span style={{marginBottom : "9px", fontWeight:"700", fontSize:"15px", color:"black"}}>Your cart contains</span>
+            <span
+              style={{
+                marginBottom: "9px",
+                fontWeight: "700",
+                fontSize: "15px",
+                color: "black",
+              }}>
+              Your cart contains
+            </span>
             <ol type="1">
               {this.state.cartItems.map((item, index) => (
                 <li key={index}>
-                  {item} <button className="del" onClick={() => this.removeFromCart(index)}>x</button>
+                  {item}{" "}
+                  <button
+                    className="del"
+                    onClick={() => this.removeFromCart(index)}>
+                    x
+                  </button>
                 </li>
               ))}
             </ol>
           </div>
           <div className="final">
             <div className="amounting">
-              <span className="text-amt">Net $</span> 
+              <span className="text-amt">Net $</span>
               <span className="amount">100.00</span>
             </div>
-            <button className="btn-2"><Link to="/transaction">CHECKOUT 🛒</Link></button>
+            <button className="btn-2">
+              <Link to="/transaction">CHECKOUT 🛒</Link>
+            </button>
           </div>
         </div>
       </div>
