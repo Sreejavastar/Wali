@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import walmart1 from "../images/walmart.png";
+import walmart1 from "../images/logo-3.png";
 import robo from "../images/chatbot-logo.png";
 import HamburgerMenu from "./Hamburger"
 import "./newpage.css";
@@ -14,7 +14,7 @@ const newpage = () => {
       {/* image */}
       <img src={walmart1} alt="walmart-logo" />
       {/* heading */}
-      {/* <h4>Walmart</h4> */}
+      <h4>Wali</h4>
     </div>
     <HamburgerMenu />
     <div className="options">
