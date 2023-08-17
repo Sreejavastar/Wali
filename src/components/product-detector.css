@@ -1,0 +1,38 @@
+.product-detector {
+  text-align: center;
+}
+
+.product-detector-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-detector-logo {
+    animation: product-detector-logo-spin infinite 20s linear;
+  }
+}
+
+.product-detector-header {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.product-detector-link {
+  color: #61dafb;
+}
+
+@keyframes product-detector-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
