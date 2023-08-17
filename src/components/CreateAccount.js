@@ -1,7 +1,7 @@
 // src/components/LoginPage.js
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import "./LoginPage.css";
+import "./CreateAccount.css";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -27,11 +27,29 @@ const LoginPage = () => {
   return (
     <div className="login-page">
       <div className="container">
-        <h2>Login</h2>
+        <h2>Create Account</h2>
         <div>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
+            id="username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="username">Name:</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="username">Email</label>
+          <input
+            type="email"
             id="username"
             value={username}
             onChange={handleUsernameChange}
@@ -47,16 +65,9 @@ const LoginPage = () => {
           />
         </div>
         <div className="login-buttons">
-          <button onClick={handleLogin}>Login</button>
-          <Link to="/createaccount" className="create-account">
-            Create account
-          </Link>
+          <button onClick={handleLogin}>Create Account</button>
         </div>
       </div>
-      <p>
-        Don't have an account? <Link to="/newpage">Click here</Link> to go to
-        the new page.
-      </p>
     </div>
   );
 };
