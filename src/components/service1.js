@@ -4,6 +4,8 @@ import QrReader from "react-qr-scanner";
 import walmart1 from "../images/walmart.png";
 import robo from "../images/chatbot-logo.png";
 import HamburgerMenu from "./Hamburger";
+import Policy from "./Policy";
+import transaction from "./transaction";
 import "./service.css";
 
 class QrContainer extends Component {
@@ -70,7 +72,7 @@ class QrContainer extends Component {
                 <Link to="/newpage">Change your location</Link>
               </li>
               <li>
-                <Link to="#">Our Policy</Link>
+              <Link to="/Policy"> Our Policy </Link>
               </li>
               <li className="chatter">
                 <Link to="/chatbot">Chat with <img src={robo} alt="chatbot" /> </Link>
