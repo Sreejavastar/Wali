@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 .parent1 {
   max-width: 1024px;
   margin-left: 19rem;
+  font-family: 'Didact Gothic', sans-serif;
   margin-top: 2rem;
 }
 
@@ -56,6 +59,8 @@
   text-decoration: none;
   color: black;
   transition: 0.3s ease-in-out;
+  font-size: 18px;
+  font-weight: 700;
   border-bottom: 5px solid transparent;
   display: inline-block;
   /* Ensure the underline only spans the text width */
@@ -154,21 +159,29 @@
   padding: 20px;
 }
 
-.list ul {
+.list ol {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   width: 100%;
-  list-style-type: none;
+  list-style-type:square;
 }
 
-.list ul li {
+.list ol li {
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 4rem;
   padding: 2px 16px;
+  list-style-type:square;
+
 }
 
-.list ul li a {
+.list ol li a {
   text-decoration: none;
+  list-style-type:square;
+
 }
 
 /* .list ul  */
@@ -184,7 +197,21 @@
   border-radius: 27px;
   box-shadow: 0px 0px 12px 3px gray;
   letter-spacing: 3px;
+  cursor: pointer;
 }
+
+.btn-2 a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-2 a:hover {
+  color: gold;
+  letter-spacing: 1.5px;
+}
+
 
 .del {
   display: flex;
@@ -192,7 +219,7 @@
   align-items: center;
   padding: 2px;
   height: 20px;
-  width: 20px;
+  width: 62px;
   border: 1px solid white;
   background-color: black;
   color: white;
@@ -200,6 +227,7 @@
   /* padding-bottom: 15px; */
   text-align: center;
   box-shadow: 0px 0px 8px 0px grey;
+
 }
 
 /* Add media query for screens smaller than 768px (typical tablet size) */
@@ -309,6 +337,7 @@
 .scanner {
   height: 20rem;
   width: 20rem;
+  background-color: black;
 }
 
 .scanned-result {
@@ -321,11 +350,9 @@
   font-weight: 700;
   text-align: center;
   display: block;
-  height: 274px;
+  height: 404px;
   padding: 23px 12px;
   display: block;
-  height: 402px;
-  padding: 23px 12px;
 }
 
 /* styles.css */
@@ -434,7 +461,9 @@
   box-shadow: 0px 0px 9px 2px lightgray;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+
 }
+
 .cancel-item {
   padding: 11px 19px;
   background-color: #1194de;

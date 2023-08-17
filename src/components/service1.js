@@ -1,10 +1,9 @@
-import React, {Component} from "react";
-import {Link} from "react-router-dom";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import QrReader from "react-qr-scanner";
 import walmart1 from "../images/walmart.png";
 import robo from "../images/chatbot-logo.png";
-import HamburgerMenu from "./Hamburger"
-// import menu from "../../public/";
+import HamburgerMenu from "./Hamburger";
 import "./service.css";
 
 class QrContainer extends Component {
@@ -13,9 +12,12 @@ class QrContainer extends Component {
     this.state = {
       data: null,
       result: "Hold QR Code Steady and Clear to Scan",
+      cartItems: [], // Initialize an empty array for cart items
     };
     this.handleScan = this.handleScan.bind(this);
     this.handleError = this.handleError.bind(this);
+    this.addToCart = this.addToCart.bind(this); // Add a method for adding to cart
+    this.removeFromCart = this.removeFromCart.bind(this); // Add a method for removing from cart
   }
 
   handleScan(result) {
@@ -26,20 +28,40 @@ class QrContainer extends Component {
     }
   }
 
+  handleCancel() {
+    this.setState({
+      data: null,
+      result: "Hold QR Code Steady and Clear to Scan", // Reset the result message
+    });
+  }
+
   handleError(err) {
     console.error(err);
   }
-  
+
+  addToCart() {
+    const { data, cartItems } = this.state;
+    if (data && data.text) {
+      const newItem = data.text;
+      this.setState({
+        cartItems: [...cartItems, newItem], // Add the new item to cart
+        data: null, // Clear the scanned data after adding to cart
+      });
+    }
+  }
+
+  removeFromCart(index) {
+    const cartItems = [...this.state.cartItems];
+    cartItems.splice(index, 1);
+    this.setState({ cartItems });
+  }
 
   render() {
     return (
       <div className="parent1">
         <div className="Navbar">
           <div className="logo-head">
-            {/* image */}
             <img src={walmart1} alt="walmart-logo" />
-            {/* heading */}
-            {/* <h4>Walmart</h4> */}
           </div>
           <HamburgerMenu />
           <div className="options">
@@ -65,6 +87,7 @@ class QrContainer extends Component {
             <button className="selection">Select ✅</button>
           </div>
           <div className="camera-scan">
+            <span style={{marginBottom : "9px", fontWeight:"700"}}>Hold QR Code Steady and Clear to Scan</span>
             <QrReader
               delay={1000}
               className="scanner"
@@ -72,13 +95,7 @@ class QrContainer extends Component {
               onScan={this.handleScan}
             />
           </div>
-          <div
-            className="scanned-result"
-            style={{
-              display:
-                this.state.data && this.state.data.text ? "block" : "none",
-            }}
-          >
+          <div className="scanned-result" style={{ display: this.state.data && this.state.data.text ? "block" : "none" }}>
             <div className="scanned-box">
               <p className="scanned-result-heading">Scanned Result:</p>
               <p className="final-results">
@@ -92,41 +109,30 @@ class QrContainer extends Component {
               </p>
               
               <div className="action-scanned">
-              <div className="quantity">
-                Qty: <input className="quantity-field" type="number" />
+                <div className="quantity">
+                  Qty: <input className="quantity-field" type="number" />
+                </div>
+                <button className="add-to-cart" onClick={this.addToCart}>Add to Cart</button>
+                <button className="cancel-item" onClick={this.handleCancel}>Cancel item</button>
               </div>
-              <button className="add-to-cart">Add to Cart</button>
-              <button className="cancel-item">Cancel item</button>
-              </div>
-
             </div>
           </div>
-
           <div className="list">
-            <ul>
-              <li>
-                item-1 <button className="del">x</button>
-              </li>
-              <li>
-                item-2 <button className="del">x</button>
-              </li>
-              <li>
-                item-3 <button className="del">x</button>
-              </li>
-              <li>
-                item-4 <button className="del">x</button>
-              </li>
-              <li>
-                item-5 <button className="del">x</button>
-              </li>
-            </ul>
+          <span style={{marginBottom : "9px", fontWeight:"700", fontSize:"15px", color:"black"}}>Your cart contains</span>
+            <ol type="1">
+              {this.state.cartItems.map((item, index) => (
+                <li key={index}>
+                  {item} <button className="del" onClick={() => this.removeFromCart(index)}>x</button>
+                </li>
+              ))}
+            </ol>
           </div>
-           <div className="final">
+          <div className="final">
             <div className="amounting">
               <span className="text-amt">Net $</span> 
               <span className="amount">100.00</span>
             </div>
-          <button className="btn-2">CHECKOUT 🛒</button>
+            <button className="btn-2"><Link to="/transaction">CHECKOUT 🛒</Link></button>
           </div>
         </div>
       </div>

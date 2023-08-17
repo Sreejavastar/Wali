@@ -27,6 +27,7 @@ const Chatbot = () => {
       console.error("Error sending message:", error);
     }
   };
+  
 
   return (
     <div className="parent-chat">
