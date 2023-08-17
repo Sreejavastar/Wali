@@ -17,7 +17,6 @@
   }
 } */
 
-
 .Navbar {
   display: flex;
   justify-content: space-between;
@@ -132,7 +131,7 @@
 
 .camera-scan {
   width: 40%;
-  background:  linear-gradient(to right, gold, #1194de);
+  background: linear-gradient(to right, gold, #1194de);
   height: 353px;
   display: flex;
   flex-direction: column;
@@ -325,7 +324,7 @@
   height: 274px;
   padding: 23px 12px;
   display: block;
-  height: 302px;
+  height: 402px;
   padding: 23px 12px;
 }
 
@@ -383,7 +382,6 @@
   text-decoration-style: none;
 }
 
-
 .quantity {
   text-align: center;
   display: flex;
@@ -428,23 +426,38 @@
 
 .add-to-cart {
   padding: 11px 22px;
-    background-color: gold;
-    border-radius: 22px;
-    border: none;
-    color: rgb(7, 7, 7);
-    font-weight: 600;
-    box-shadow: 0px 0px 9px 2px lightgray;
+  background-color: gold;
+  border-radius: 22px;
+  border: none;
+  color: rgb(7, 7, 7);
+  font-weight: 600;
+  box-shadow: 0px 0px 9px 2px lightgray;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 .cancel-item {
   padding: 11px 19px;
-    background-color: #1194de;
-    border-radius: 22px;
-    border: none;
-    color: white;
-    font-weight: 600;
-    box-shadow: 0px 0px 9px 2px lightgray;
-} 
+  background-color: #1194de;
+  border-radius: 22px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 0px 9px 2px lightgray;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
 
+.add-to-cart:hover {
+  letter-spacing: 0.2px;
+  color: black;
+  background-color: white;
+}
+
+.cancel-item:hover {
+  letter-spacing: 0.2px;
+  color: black;
+  background-color: white;
+}
 
 @media (min-width: 350px) and (max-width: 600px) {
   .parent1 {
@@ -501,37 +514,37 @@
   }
 }
 
-.final{
+.final {
   display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 45px;
-    box-shadow: 0px 0px 23px 3px lightgray;
-    padding: 12px 23px;
-    border: none;
-    border-radius: 18px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+  box-shadow: 0px 0px 23px 3px lightgray;
+  padding: 12px 23px;
+  border: none;
+  border-radius: 18px;
 }
 
-.amounting{
+.amounting {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 4px;
 }
 
-.text-amt{
+.text-amt {
   background-color: black;
-    padding: 6px 13px;
-    color: white;
-    border-radius: 22px;
+  padding: 6px 13px;
+  color: white;
+  border-radius: 22px;
 }
 
-.amount{
+.amount {
   background-color: white;
-    padding: 6px 13px;
-    color: black;
-    border-radius: 12px;
-    border: 0.5px solid black;
-    font-weight: 700;
+  padding: 6px 13px;
+  color: black;
+  border-radius: 12px;
+  border: 0.5px solid black;
+  font-weight: 700;
 }

@@ -1,19 +1,31 @@
-// src/components/Chatbot.js
 import React, {useState} from "react";
 import Message from "./Message";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
 
-  const handleSendMessage = (text) => {
+  const handleSendMessage = async (text) => {
     const userMessage = {text, sender: "user"};
     setMessages([...messages, userMessage]);
+    try {
+      const response = await fetch("http://localhost:5000/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({question: text}),
+      });
 
-    // Simulate bot response after a delay
-    setTimeout(() => {
-      const botMessage = {text: "This is a bot response.", sender: "bot"};
-      setMessages((prevMessages) => [...prevMessages, botMessage]);
-    }, 1000);
+      if (response.ok) {
+        const data = await response.json();
+        const botMessage = {text: data.response.result, sender: "bot"}; // Update this line
+        setMessages((prevMessages) => [...prevMessages, botMessage]);
+      } else {
+        console.error("Failed to receive bot response");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
   };
 
   return (
