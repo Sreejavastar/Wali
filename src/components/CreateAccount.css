@@ -49,14 +49,9 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 1rem;
 }
 
 .login-page button:hover {
   background-color: #0056b3;
-}
-
-.create-account {
-  margin-left: 2rem;
-  text-decoration: none;
-  color: white;
 }
