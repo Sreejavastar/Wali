@@ -6,6 +6,8 @@ import Service1 from "./components/service1"; // Import NewPage component
 import Chatbot from "./components/CHATBOT/chatbot"; // Import NewPage component
 import CreateAccount from "./components/CreateAccount";
 import Transaction from "./components/transaction"; // Import NewPage component
+import Policy from "./components/Policy";
+
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         {/* Define the route for Create Account */}
         <Route path="/chatbot" element={<Chatbot/>} />{" "}
         {/* Define the route for NewPage */}
-        <Route path="/chatbot" element={<Transaction/>} />{" "}
+        <Route path="/transaction" element={<Transaction/>} />{" "}
+        {/* Define the route for NewPage */}
+        <Route path="/Policy" element={<Policy/>} />{" "}
         {/* Define the route for NewPage */}
       </Routes>
     </Router>
