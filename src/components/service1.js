@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import QrReader from "react-qr-scanner";
-import walmart1 from "../images/walmart.png";
+import walmart1 from "../images/logo-3.png";
 import robo from "../images/chatbot-logo.png";
 import HamburgerMenu from "./Hamburger";
 import Policy from "./Policy";
@@ -64,6 +64,7 @@ class QrContainer extends Component {
         <div className="Navbar">
           <div className="logo-head">
             <img src={walmart1} alt="walmart-logo" />
+            <h4>Wali</h4>
           </div>
           <HamburgerMenu />
           <div className="options">
