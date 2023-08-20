@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+### Wali: Smart app, aids visually impaired shoppers with store product info using AI, QR codes, speech synthesis.
+![wali thumbnail](https://github.com/Sreejavastar/Wali/assets/77427558/c5b0770c-b495-47d8-b46b-12f5da27efb6)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Problem it is addressing to?
+The problem Wali is addressing is multifaceted: it's about enhancing the shopping experience for individuals who face challenges like visual impairment or reluctance to seek help. By leveraging emerging technologies like smart vision, QR code scanning, and AI-driven chatbot, Wali offers an inclusive solution. It empowers users to independently access information about store products, including names, quantities, discounts, and prices. The integration of a product detector and speech synthesis further ensures a seamless experience for visually impaired users. Through these innovations, Wali not only provides convenience but also promotes inclusivity, enabling individuals to overcome obstacles and engage in shopping with confidence and autonomy.
 
-## Available Scripts
 
-In the project directory, you can run:
+#How did we build it?
+Wali employs a holistic approach to address the identified challenges. It leverages smart vision technology, enabled by a pretrained COCOSSD model, to detect and recognize products placed in front of the camera. This allows users, especially those with visual impairments, to effortlessly access real-time information about items in the store. The integration of QR code scanning streamlines the process further, enabling users to obtain comprehensive details about a specific product by simply scanning its QR code.
 
-### `npm start`
+Additionally, Wali's use of speech synthesis enhances accessibility by converting textual information into clear and audible output. This audio representation of product details enables visually impaired users to independently understand the items' names, quantities, discounts, and prices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application's AI-driven chatbot, built using OpenAI's API and Langchain, serves as a knowledgeable virtual assistant. It engages users in natural language conversations, providing real-time responses to queries related to pricing, availability, discounts, and even product locations within the store. This feature reduces the need for external assistance, empowering users to navigate the shopping experience autonomously.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+By combining these technologies, Wali creates a seamless and inclusive shopping environment. It not only caters to the practical needs of its users but also addresses emotional and psychological barriers, allowing individuals to shop comfortably without the fear of embarrassment or the challenges posed by visual impairments. Wali's comprehensive solution transforms the shopping landscape, making it more accessible, efficient, and user-centered.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Video Demonstration of the working of Wali
+YouTube Link: https://youtu.be/R7FfRbZCoXQ
